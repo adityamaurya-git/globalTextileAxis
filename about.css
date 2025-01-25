@@ -1,0 +1,549 @@
+@font-face {
+    font-family: poppins;
+    src: url(/Poppins/Poppins-Light.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color1: #ffffff;
+    --primary-color2: #e4e4e4;
+    --primary-color3: #e37627;
+    --primary-color4: #014c2d;
+    --primary-textColor1: #000000;
+    --buttonTransparent: #ffd2a4;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.cursor {
+    position: fixed;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background-color: var(--primary-color4);
+    z-index: 999;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+
+/* NAVBAR SECTION STARTS */
+
+header {
+    width: 100%;
+    font-family: poppins;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem;
+    align-items: center;
+    background-color: var(--primary-color3);
+    color: var(--primary-color1);
+}
+
+.navbar .logo {
+    color: var(--primary-color1);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navbar ul li {
+    overflow: hidden;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: var(--primary-textColor1);
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.navbar a::before {
+    content: " ";
+    position: absolute;
+    top: 95%;
+    left: -100%;
+    width: 100%;
+    height: 20%;
+    border-radius: 1vw;
+    background-color: var(--primary-textColor1);
+    transition: all .2s ease-in-out;
+}
+
+.navbar a:hover::before {
+    left: 0;
+    background-color: var(--primary-color3);
+}
+
+
+
+/* ASIDE STARTS */
+
+aside {
+    font-family: poppins;
+    position: absolute;
+    top: 0;
+    right: -35%;
+    width: 35%;
+    height: 100vh;
+    background-color: var(--primary-color3);
+    color: var(--primary-color1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-left: 1px solid var(--primary-color1);
+    z-index: 999;
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    border-radius: 6vw;
+    position: relative;
+    background-color: var(--primary-color3);
+    border: 1px solid var(--primary-color1);
+    overflow: hidden;
+    cursor: pointer;
+    top: 3%;
+    left: 70%;
+}
+
+.close::before {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--buttonTransparent);
+    transition: all .2s ease-in-out;
+}
+
+.close:hover::before {
+    top: 0;
+}
+
+.close h2 {
+    z-index: 99;
+    position: relative;
+}
+
+aside .h1Wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0rem;
+    z-index: 99;
+    background-color: var(--primary-color);
+}
+
+.h1Wrapper .h1Text {
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1.3px solid var(--primary-color1);
+}
+
+.h1Text a {
+    text-decoration: none;
+    color: var(--primary-color1);
+}
+
+.h1Wrapper h1 {
+    position: relative;
+    font-size: 3vw;
+    z-index: 9;
+}
+
+.h1Text::before {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--buttonTransparent);
+    transition: all .4s ease-in-out;
+}
+
+.h1Text:hover::before {
+    top: 0;
+}
+
+.menuBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8vw;
+    transition: all .2s ease-in-out;
+    margin: 0rem 1rem;
+    width: 2.9rem;
+    height: 2.9rem;
+    cursor: pointer;
+}
+
+.menuBtn:hover {
+    border-radius: 50%;
+    background-color: var(--buttonTransparent);
+}
+
+
+/* ASIDE ENDS */
+
+
+/* NAVBAR SECTION ENDS */
+
+
+/* HERO ABOUT SECTION STARTS */
+
+.heroAbout {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutContainer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color2);
+    display: flex;
+    gap: 2vw;
+    padding: 3vw;
+}
+
+.aboutInfo {
+    font-family: poppins;
+    width: 50%;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.aboutInfo h2 {
+    font-size: 2.5vw;
+}
+
+.aboutImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.imageback, .imageback1, .imageback2{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0%);
+    background-color: var(--primary-color2);
+}
+
+.aboutImage img {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutCard {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    gap: 2vw;
+    padding: 1vh 6vw;
+    justify-content: center;
+    background-color: var(--primary-color2);
+    padding: 5vh 1vw;
+    font-family: poppins;
+    overflow: hidden;
+}
+
+.aboutCard .card {
+    width: 28%;
+    height: 100%;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+    background-color: var(--primary-color1);
+    border-radius: .7vw;
+    position: relative;
+    overflow: hidden;
+    z-index: 99;
+}
+
+.aboutCard .card i,
+h2,
+p {
+    position: relative;
+    z-index: 99;
+}
+
+.aboutCard .card::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    background-color: var(--primary-color3);
+    transition: all .2s ease-in-out;
+    z-index: 9;
+}
+
+.aboutCard .card:hover::before {
+    transform: translateX(0);
+}
+
+.aboutCard .card:hover {
+    color: var(--primary-color1);
+}
+
+/* HERO ABOUT SECTION ENDS */
+
+.container2{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    align-items: center;
+    padding: 15vh 0 15vh 0;
+}
+
+/* HISTORY SECTION STARTS */
+
+.infoSection{
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    top: 0vh;
+    font-family: poppins;
+    background-color: var(--primary-color1);
+}
+
+.history {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin: 2rem 0rem ;
+}
+
+.revealTextContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-family: poppins;
+}
+
+.revealingText {
+    position: absolute;
+    font-size: 4vw;
+    opacity: .2;
+    width: 100%;
+    left: 7%;
+}
+
+.revealingTextTop {
+    position: absolute;
+    font-size: 4vw;
+    opacity: 1;
+    white-space: nowrap;
+    width: 0%;
+    left: 7%;
+    overflow: hidden;
+    margin: 2rem 0rem;
+}
+
+.historyPage {
+    width: 100%;
+    height: 100%;
+    padding: 2vw;
+    display: flex;
+    gap: 2vw;
+}
+
+.historyPageImage ,.presentPageImage {
+    width: 200%;
+    height: 100%;
+    position: relative;
+}
+
+.imageback1{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(0%);
+    background-color: var(--primary-color1);
+}
+
+.historyPageImage img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* HISTORY SECTION ENDS */
+
+
+/* PRESENT SECTION STARTS */
+
+.presentPage{
+    width: 100%;
+    height: 100%;
+    padding: 2vw;
+    display: flex;
+    gap: 2vw;
+}
+
+.presentPageImage img{
+    width: 100%;
+    height:80%;
+}
+
+.imageback2{
+    background-color: var(--primary-color1);
+}
+
+/* PRESENT SECTION ENDS */
+
+
+/* TEAM SECTION STARTS */
+
+.team {
+    width: 100%;
+    height: 80%;
+    font-family: poppins;
+    padding: 4vw;
+}
+
+.teamContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.teamMember {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamMember img {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+}
+
+/* TEAM SECTION ENDS */
+
+
+
+/* FOOTER SECTION STARTS */
+
+footer {
+    width: 100%;
+    height: 90%;
+    background-color: var(--primary-color4);
+    color: var(--primary-color1);
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    padding: 2vw;
+    font-family: poppins;
+    justify-content: space-around;
+}
+
+.footerTop {
+    width: 100%;
+    padding: 3vw;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary-color1);
+}
+
+.footerTop .part {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.part h3 {
+    font-size: 2vw;
+}
+
+.part img {
+    width: 15vw;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: var(--primary-color1);
+}
+
+.footerBottom {
+    text-align: center;
+}
+
+/* FOOTER SECTION ENDS */
