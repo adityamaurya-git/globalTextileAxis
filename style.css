@@ -1,0 +1,523 @@
+@font-face {
+    font-family: poppins;
+    src: url(/Poppins/Poppins-Light.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color1: #ffffff;
+    --primary-color2: #e4e4e4;
+    --primary-color3: #e37627;
+    --primary-color4: #014c2d;
+    --primary-textColor1: #000000;
+    --buttonTransparent: #ffd2a4;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color4);
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.cursor {
+    position: fixed;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background-color: var(--primary-color4);
+    z-index: 999;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* NAVBAR SECTION STARTS */
+
+header {
+    width: 100%;
+    font-family: poppins;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .8rem;
+    color: var(--primary-color1);
+    background-color: var(--primary-color3);
+    align-items: center;
+    transition: all .2s ease-in-out;
+}
+
+.logo{
+    width: 20.5vw;
+}
+
+.logo img{
+    width: 100%;
+}
+.logo h1{
+    width: 100%;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.navbar ul li {
+    overflow: hidden;
+}
+
+.navbar ul a {
+    text-decoration: none;
+    color: var(--primary-color1);
+    position: relative;
+    transition: all .2s ease-in-out;
+}
+
+.navbar a::before {
+    content: " ";
+    position: absolute;
+    top: 95%;
+    left: -100%;
+    width: 100%;
+    height: 20%;
+    border-radius: 1vw;
+    background-color: var(--primary-textColor1);
+    transition: all .2s ease-in-out;
+}
+
+.navbar a:hover::before {
+    left: 0;
+    background-color: var(--primary-color3);
+}
+
+.menuBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8vw;
+    transition: all .2s ease-in-out;
+    margin: 0rem 1rem;
+    width: 2.9rem;
+    height: 2.9rem;
+    cursor: pointer;
+}
+
+.menuBtn:hover {
+    border-radius: 50%;
+    background-color: var(--buttonTransparent);
+}
+
+
+
+/* ASIDE STARTS */
+
+aside {
+    font-family: poppins;
+    position: absolute;
+    top: 0;
+    right: -35%;
+    width: 35%;
+    height: 100vh;
+    background-color: var(--primary-color3);
+    color: var(--primary-color1);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 999;
+    border-left: 1px solid white;
+}
+
+.close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    border-radius: 6vw;
+    position: relative;
+    background-color: var(--primary-color3);
+    border: 1px solid var(--primary-color1);
+    overflow: hidden;
+    cursor: pointer;
+    top: 3%;
+    left: 70%;
+}
+
+.close::before {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--buttonTransparent);
+    transition: all .2s ease-in-out;
+}
+
+
+.close:hover::before {
+    top: 0;
+}
+
+aside .h1Wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0rem;
+    z-index: 99;
+    background-color: var(--primary-color);
+}
+
+.h1Wrapper .h1Text {
+    padding: 1rem;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1.3px solid var(--primary-color1);
+}
+
+.h1Text a {
+    text-decoration: none;
+    color: var(--primary-color1);
+}
+
+.h1Wrapper h1 {
+    position: relative;
+    font-size: 3vw;
+    z-index: 9;
+}
+
+.h1Text::before {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--buttonTransparent);
+    transition: all .4s ease-in-out;
+}
+
+.h1Text:hover::before {
+    top: 0;
+}
+
+
+/* ASIDE ENDS */
+
+/* NAVBAR SECTION ENDS */
+
+
+/* HERO SECTION STARTS */
+
+.heroPage {
+    width: 100%;
+    height: 90%;
+    position: relative;
+    background-color: var(--primary-color2);
+
+}
+
+.heroPage img {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.heroContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: .8vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    color: var(--primary-color4);
+}
+
+.heroContainer h1 {
+    font-size: 3.5vw;
+}
+
+.heroContainer h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 1.5vw;
+    border-radius: 2vw;
+    z-index: 99;
+    position: relative;
+    padding: .3vw;
+    background-color: var(--primary-color4);
+}
+
+.heroContainer a {
+    text-decoration: none;
+    position: relative;
+    padding: .7vw;
+    border-radius: .5vw;
+    color: var(--primary-color1);
+    z-index: 99;
+    margin: 0rem 1rem;
+}
+
+
+.heroContainer h3::before {
+    position: absolute;
+    content: " ";
+    top: 35%;
+    left: 10%;
+    transform: translateX(-100%);
+    background-color: var(--buttonTransparent);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    z-index: 9;
+    transition: all .4s ease-in-out;
+
+}
+
+.heroContainer h3:hover::before {
+    transform: scale(30);
+}
+
+
+
+
+/* HERO SECTION ENDS */
+
+
+/* MARQUE SECTION STARTS */
+
+.marque {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color3);
+    color: var(--primary-color2);
+    font-family: poppins;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.marqueInfo {
+    display: flex;
+    flex-direction: column;
+    gap: .7vh;
+    font-size: 2.4vw;
+    padding: 2vw;
+}
+
+.marqueInfo p {
+    font-size: 2vw;
+}
+
+.infiniteFlow{
+    background-color: var(--buttonTransparent);
+}
+
+.move {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.infiniteFlow .card1 {
+    display: inline-block;
+    white-space: nowrap;
+    animation: move 10s linear infinite ;
+}
+
+@keyframes move{
+    from{
+        transform: translate(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+.infiniteFlow .card1 img{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin: -1rem;
+    display: inline-block;
+}
+
+.infiniteFlow h2 {
+    font-size: 5vw;
+    margin: 2rem;
+    display: inline-block;
+}
+
+/* MARQUE SECTION ENDS */
+
+/* DESCRIPTION SECTION STARTS */
+
+.description {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    justify-content: space-around;
+    align-items: center;
+    font-family: poppins;
+    background-color: var(--primary-color2);
+    overflow: hidden;
+}
+
+.descTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    text-align: center;
+}
+
+.descTop h1 {
+    font-size: 3vw;
+}
+
+.descBottom {
+    width: 80%;
+    justify-content: center;
+    display: flex;
+    gap: 2vw;
+}
+
+.descBottom .card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5vh;
+    background-color: var(--primary-color1);
+    padding: 2vw;
+    text-align: center;
+    border-radius: .5vw;
+    /* box-shadow: 1px 1px 2px 0px; */
+    position: relative;
+    overflow: hidden;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.descBottom .card i,
+h2,
+p {
+    position: relative;
+    z-index: 99;
+}
+
+.descBottom .card:hover {
+    color: var(--primary-color1);
+}
+
+.descBottom .card::before {
+    content: "";
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color3);
+    transition: all .2s ease-in-out;
+}
+
+.descBottom .card:hover::before {
+    transform: translateX(0);
+}
+
+/* DESCRIPTION SECTION ENDS */
+
+
+/* FOOTER SECTION STARTS */
+
+footer {
+    width: 100%;
+    height: 90%;
+    background-color: var(--primary-color4);
+    color: var(--primary-color1);
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+    padding: 2vw;
+    font-family: poppins;
+    justify-content: space-around;
+}
+
+.footerTop {
+    width: 100%;
+    padding: 3vw;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--primary-color1);
+}
+
+.footerTop .part {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.part1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.part h3 {
+    font-size: 2vw;
+}
+
+.part img{
+    width: 15vw;
+}
+
+.footerLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.footerLinks a {
+    text-decoration: none;
+    color: var(--primary-color1);
+}
+
+.footerBottom {
+    text-align: center;
+}
+
+/* FOOTER SECTION ENDS */
