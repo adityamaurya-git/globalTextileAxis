@@ -3,6 +3,11 @@
     src: url(/Poppins/Poppins-Light.ttf);
 }
 
+@font-face {
+    font-family: publico;
+    src: url(/publico/light/Publico\ Banner\ Web\ Light\ Regular.ttf);
+}
+
 
 * {
     margin: 0;
@@ -12,11 +17,12 @@
 
 :root {
     --primary-color1: #ffffff;
-    --primary-color2: #e4e4e4;
-    --primary-color3: #e37627;
+    --primary-color2: #F6F5EF;
+    --primary-color3: #ffd2a4;
     --primary-color4: #014c2d;
+    --primary-color5: #B7B3A4;
     --primary-textColor1: #000000;
-    --buttonTransparent: #ffd2a4;
+    --buttonTransparent: #e37627;
 }
 
 html,
@@ -45,7 +51,7 @@ body{
     height: 1.4rem;
     border-radius: 50%;
     background-color: var(--primary-color4);
-    z-index: 999;
+    z-index: 9999;
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
@@ -54,178 +60,103 @@ body{
 
 /* NAVBAR SECTION STARTS */
 
-header {
+
+.navbar{
     width: 100%;
-    font-family: poppins;
+    height: 7.5vh;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: .4rem 5rem;
+    font-family: publico;
+    z-index: 999;
+    background-color: var(--primary-color2);
+    transition: all .7s ease-in-out;
 }
 
-.navbar {
+.navbarContainer{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: .8rem;
-    color: var(--primary-color1);
-    background-color: var(--primary-color3);
-    align-items: center;
-    transition: all .2s ease-in-out;
 }
 
-.logo{
-    width: 20.5vw;
-}
-
-.logo img{
-    width: 100%;
-}
-.logo h1{
-    width: 100%;
-}
-
-.navbar ul {
+.navbar ul{
     display: flex;
-    gap: 1rem;
     list-style: none;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+    margin-top: 1vw;
 }
-
-.navbar ul li {
-    overflow: hidden;
+.navbar li{
+    margin-bottom: 1.5vw;
+    font-size: 1.5vw;
 }
-
-.navbar ul a {
+.navbar ul a{
+    color: var(--primary-textColor1);
     text-decoration: none;
-    color: var(--primary-color1);
-    position: relative;
     transition: all .2s ease-in-out;
 }
 
-.navbar a::before {
-    content: " ";
-    position: absolute;
-    top: 95%;
-    left: -100%;
-    width: 100%;
-    height: 20%;
-    border-radius: 1vw;
-    background-color: var(--primary-textColor1);
-    transition: all .2s ease-in-out;
+.navbar ul a:hover{
+    color: #898989;
 }
 
-.navbar a:hover::before {
-    left: 0;
-    background-color: var(--primary-color3);
+.logo h1{
+    font-size: 2.7vw;
+    margin: .5rem 0rem 0rem 0rem;
 }
-
-.menuBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8vw;
-    transition: all .2s ease-in-out;
-    margin: 0rem 1rem;
-    width: 2.9rem;
-    height: 2.9rem;
-    cursor: pointer;
-}
-
-.menuBtn:hover {
-    border-radius: 50%;
-    background-color: var(--buttonTransparent);
-}
-
-
-
-/* ASIDE STARTS */
-
-aside {
-    font-family: poppins;
-    position: absolute;
-    top: 0;
-    right: -35%;
-    width: 35%;
-    height: 100vh;
-    background-color: var(--primary-color3);
-    color: var(--primary-color1);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    z-index: 999;
-    border-left: 1px solid white;
-}
-
-.close {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10vw;
-    border-radius: 6vw;
-    position: relative;
-    background-color: var(--primary-color3);
-    border: 1px solid var(--primary-color1);
+.nav-elem h5{
+    font-size: 1vw;
+    margin-bottom: .5vw;
+    display: none;
     overflow: hidden;
-    cursor: pointer;
-    top: 3%;
-    left: 70%;
 }
 
-.close::before {
-    content: " ";
+.nav-elem h5 span{
+    font-weight: 600;
+    display: inline-block;
+    transform: translateY(25px);
+}
+
+.navbar button{
+    border: none;
+    border-radius: 1rem;
+    padding: .4rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.nav-bottom{
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--buttonTransparent);
-    transition: all .2s ease-in-out;
-}
-
-
-.close:hover::before {
-    top: 0;
-}
-
-aside .h1Wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 3rem 0rem;
-    z-index: 99;
-    background-color: var(--primary-color);
-}
-
-.h1Wrapper .h1Text {
-    padding: 1rem;
-    overflow: hidden;
-    position: relative;
-    border-bottom: 1.3px solid var(--primary-color1);
-}
-
-.h1Text a {
-    text-decoration: none;
-    color: var(--primary-color1);
-}
-
-.h1Wrapper h1 {
-    position: relative;
-    font-size: 3vw;
+    width: 87%;
+    height: 0%;
     z-index: 9;
+    background-color: var(--primary-color2);
+    border-bottom: 1px solid var(--primary-textColor1);
 }
 
-.h1Text::before {
-    content: " ";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--buttonTransparent);
-    transition: all .4s ease-in-out;
+.menuBtn{
+    display: none;
 }
 
-.h1Text:hover::before {
-    top: 0;
+.spanContainer{
+    margin: .6rem 0rem 0rem 0rem ;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.menuBtn span{
+    width: 1.4rem ;
+    height: 2px;
+    background-color: var(--primary-textColor1);
 }
 
-
-/* ASIDE ENDS */
+.navbar-height{
+   height: 90vh;
+}
 
 /* NAVBAR SECTION ENDS */
 
@@ -253,12 +184,11 @@ aside .h1Wrapper {
     width: 100%;
     height: 100%;
     display: flex;
-    gap: .8vh;
+    gap: 1.5vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: poppins;
-    color: var(--primary-color4);
+    font-family: publico;
 }
 
 .heroContainer h1 {
@@ -319,9 +249,9 @@ aside .h1Wrapper {
 .marque {
     width: 100%;
     height: 100%;
-    background-color: var(--primary-color3);
-    color: var(--primary-color2);
-    font-family: poppins;
+    background-color: var(--buttonTransparent);
+    color: var(--primary-color3);
+    font-family: publico;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -340,7 +270,7 @@ aside .h1Wrapper {
 }
 
 .infiniteFlow{
-    background-color: var(--buttonTransparent);
+    background-color: var(--primary-color2);
 }
 
 .move {
@@ -375,6 +305,7 @@ aside .h1Wrapper {
     font-size: 5vw;
     margin: 2rem;
     display: inline-block;
+    color: var(--buttonTransparent);
 }
 
 /* MARQUE SECTION ENDS */
@@ -383,19 +314,21 @@ aside .h1Wrapper {
 
 .description {
     width: 100%;
-    height: 80%;
+    height: 100%;
+    padding: 5vw 0vw;
     display: flex;
     flex-direction: column;
     gap: 2vh;
     justify-content: space-around;
     align-items: center;
-    font-family: poppins;
+    font-family: publico;
     background-color: var(--primary-color2);
     overflow: hidden;
 }
 
 .descTop {
     display: flex;
+    gap: 1vh;
     flex-direction: column;
     align-items: center;
     width: 60%;
@@ -407,27 +340,30 @@ aside .h1Wrapper {
 }
 
 .descBottom {
-    width: 80%;
+    background-color: var(--buttonTransparent);
+    width: 90%;
+    height: 100%;
     justify-content: center;
+    align-items: center;
     display: flex;
     gap: 2vw;
 }
 
 .descBottom .card {
     width: 30%;
+    height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.5vh;
-    background-color: var(--primary-color1);
     padding: 2vw;
     text-align: center;
     border-radius: .5vw;
-    /* box-shadow: 1px 1px 2px 0px; */
     position: relative;
     overflow: hidden;
     z-index: 99;
     cursor: pointer;
+    border: 1px solid var(--primary-textColor1);
 }
 
 .descBottom .card i,
@@ -437,9 +373,10 @@ p {
     z-index: 99;
 }
 
-.descBottom .card:hover {
-    color: var(--primary-color1);
+.card p{
+    font-family: poppins;
 }
+
 
 .descBottom .card::before {
     content: "";
@@ -450,7 +387,7 @@ p {
     transform: translateX(-100%);
     width: 100%;
     height: 100%;
-    background-color: var(--primary-color3);
+    background-color: var(--primary-color2);
     transition: all .2s ease-in-out;
 }
 
@@ -472,7 +409,7 @@ footer {
     flex-direction: column;
     gap: 6vh;
     padding: 2vw;
-    font-family: poppins;
+    font-family: publico;
     justify-content: space-around;
 }
 
@@ -480,15 +417,30 @@ footer {
     width: 100%;
     padding: 3vw;
     display: flex;
+    gap: 2vw;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid var(--primary-color1);
+}
+
+.partContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.partContainer .part{
+    width: 100%;
 }
 
 .footerTop .part {
     width: 30%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1vh;
+    gap: 2vh;
 }
 
 .part1{
@@ -498,7 +450,7 @@ footer {
 }
 
 .part h3 {
-    font-size: 2vw;
+    font-size: 3vw;
 }
 
 .part img{
@@ -508,16 +460,620 @@ footer {
 .footerLinks {
     display: flex;
     flex-direction: column;
-    gap: 1vh;
+}
+
+.footerContactInfo{
+    display: flex;
+    flex-direction: column;
+    gap: .7vh;
 }
 
 .footerLinks a {
     text-decoration: none;
     color: var(--primary-color1);
+    width: 14vw;
+    padding: .4vw;
+}
+
+.footerLinks a:hover{
+    border-radius: 1vw;
+    background-color: var(--primary-color2);
+    color: var(--primary-textColor1);
 }
 
 .footerBottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
     text-align: center;
 }
 
+.footerBottom h1{
+    font-size: 4vw;
+}
+
 /* FOOTER SECTION ENDS */
+
+
+
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
+
+
+@media  screen and (max-width:981px) {
+
+    .heroContainer h3::before {
+        left: 12%;
+        top: 27%;
+    }
+    
+}
+
+@media screen and (max-width:900px) {
+
+    .cursor{
+        display: none;
+    }
+
+    .navbar li{
+        font-size: 1.7vw;
+    }
+
+    .nav-elem h5{
+        font-size: 1.2vw;
+    }
+    
+}
+
+@media screen and (max-width:768px)  {
+    .menuBtn{
+        display: block;
+        cursor: pointer;
+    }
+
+    .logo h1{
+        font-size: 3.2vw;
+        width: 29vw;
+    }
+
+    .navbar{
+        overflow: hidden;
+        border-bottom: 1px solid var(--primary-textColor1);
+    }
+   
+    .navbarContainer{
+        flex-direction: column;
+    }
+
+    .navbar ul{
+        justify-content: space-around;
+
+    }
+
+    .nav-elem li{
+        margin-bottom: 0px;
+        margin-top: 2.2rem;
+        font-size: 3vw;
+        
+    }
+    .nav-elem h5{
+        display: block;
+        overflow: visible;
+        margin-bottom: .5vw;
+        font-size: 2vw;
+        margin-left: .5rem;
+    }
+
+    /* HERO CONTAINER */
+
+    .heroContainer h3::before{
+        top: 27%;
+        width: .7rem;
+        height: .7rem;
+    }
+
+    /*  MOVING CONTAINER*/
+
+    .infiniteFlow .card1 img{
+        width: 4rem ;
+        height: 4rem;
+    }
+}
+
+@media screen and (max-width:668px) {
+    .nav-elem li{
+        font-size: 2.7vw;
+        margin-top: 1.1rem;
+    }
+    .nav-elem h5{
+        font-size: 1.7vw;
+        margin-bottom: .2rem;
+    }
+
+    /* HERO CONTAINER */
+    .heroContainer h1 {
+        font-size: 4.5vw;
+    }
+    .heroContainer h3{
+        font-size: 2vw;
+        padding: 1.2vw;
+        border-radius: 4vw;
+    }
+
+    .heroContainer h3::before{
+        top: 28%;
+        width: .7rem;
+        height: .7rem;
+    }
+
+    /* MOVING CONTAINER */
+
+    .marqueInfo h1{
+        font-size: 5.5vw;
+    }
+
+    .marqueInfo p{
+        font-size: 3vw;
+    }
+
+
+
+}
+
+@media screen and (max-width:576px) {
+    .logo h1{
+        font-size: 4vw;
+        width: 39vw;
+    }
+    .navbar ul{
+        flex-direction: column;
+    }
+
+    .nav-elem li{
+        font-size: 3.5vw;
+    }
+    
+    .nav-elem h5{
+        font-size: 2.5vw;
+    }
+
+}
+
+
+
+
+
+/* ******** ALL MOBILE DEVICES ******* */
+
+@media screen and (max-width:480px) and (min-width:400px) and (max-height:790px){
+
+    .logo h1{
+        font-size: 4.2vw;
+        margin: .6rem 0rem 0rem 0rem;
+    }
+
+    .navbar{
+        padding: 2vw 4vw;
+    }
+    .nav-elem li{
+        font-size: 3.8vw;
+        margin-top: 1.7rem;
+    }
+    .nav-elem h5{
+        font-size: 3.2vw;
+    }
+     /* HERO CONTAINER */
+
+     .heroContainer{
+        padding: 2vw;
+        text-align: center;
+    }
+
+    .heroContainer h1 {
+        font-size: 5.5vw;
+    }
+
+    .heroContainer h3{
+        font-size: 3.5vw;
+        padding: 2vw;
+        border-radius: 4vw;
+    }
+
+    .heroContainer h3::before{
+        top: 28%;
+        width: .7rem;
+        height: .7rem;
+    }
+    
+    /* MOVING CONTAINER */
+
+    .marqueInfo h1{
+        font-size: 8vw;
+    }
+
+    .marqueInfo p{
+        font-size: 5vw;
+    }
+    .infiniteFlow .card1 img{
+        width: 4rem ;
+        height: 4rem;
+    }
+    .infiniteFlow h2{
+        font-size: 2.2rem;
+    }
+
+    /* DESCRIPTION */
+
+    .descTop{
+        width: 90%;
+    }
+
+    .descTop h1{
+        width: 100%;
+        font-size: 1.7rem;
+    }
+    .descBottom{
+        flex-direction: column;
+    }
+
+    .descBottom .card{
+        width: 70%;
+        height: 30%;
+    }
+    .card h2{
+        font-size: 1.4rem;
+    }
+    .card p{
+        font-size: .85rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+        height: 60%;
+        justify-content: space-between;
+    }
+    .partContainer{
+        width: 60%;
+        flex-direction: column;
+    }
+    .partContainer .part{
+        width: 100%;
+    }
+
+    .partContainer .part h3{
+        font-size: 1.2rem;
+    }
+    .part a{
+        width: 38%;
+    }
+}
+
+@media screen and (max-width:400px) and (min-width:320px) and (max-height:790px){
+    .logo h1{
+        font-size: 4.6vw;
+        margin: .75rem 0rem 0rem 0rem;
+    }
+
+    .navbar{
+        padding: 2vw 4vw;
+    }
+    .nav-elem li{
+        font-size: 4.1vw;
+        margin-top: 1.8rem;
+    }
+    .nav-elem h5{
+        font-size: 3.3vw;
+    }
+
+    /* HERO CONTAINER */
+
+    .heroContainer{
+        padding: 2vw;
+        text-align: center;
+    }
+
+    .heroContainer h1 {
+        font-size: 5.5vw;
+    }
+
+    .heroContainer h3{
+        font-size: 3.5vw;
+        padding: 2vw;
+        border-radius: 4vw;
+    }
+
+    .heroContainer h3::before{
+        top: 28%;
+        width: .7rem;
+        height: .7rem;
+    }
+    
+    /* MOVING CONTAINER */
+
+    .marqueInfo h1{
+        font-size: 8vw;
+    }
+
+    .marqueInfo p{
+        font-size: 5vw;
+    }
+    .infiniteFlow .card1 img{
+        width: 4rem ;
+        height: 4rem;
+    }
+    .infiniteFlow h2{
+        font-size: 2.2rem;
+    }
+
+    /* DESCRIPTION */
+
+    .descTop{
+        width: 90%;
+    }
+
+    .descTop h1{
+        width: 100%;
+        font-size: 1.7rem;
+    }
+    .descBottom{
+        flex-direction: column;
+    }
+
+    .descBottom .card{
+        width: 70%;
+        height: 30%;
+    }
+    .card h2{
+        font-size: 1.4rem;
+    }
+    .card p{
+        font-size: .85rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+        height: 60%;
+        justify-content: space-between;
+    }
+    .partContainer{
+        width: 60%;
+        flex-direction: column;
+    }
+    .partContainer .part{
+        width: 100%;
+    }
+
+    .partContainer .part h3{
+        font-size: 1.2rem;
+    }
+    .part a{
+        width: 38%;
+    }
+
+}
+
+/* MIN 791PX */
+
+@media screen and (max-width:480px) and (min-width:400px) and (min-height:791px) {
+
+    .logo h1{
+        font-size: 4.5vw;
+        margin: 1.1rem 0rem 0rem 0rem;
+    }
+
+    .menuBtn{
+        margin: .6rem 0rem 0rem 0rem;
+    }
+
+    .navbar{
+        padding: 2vw 4vw;
+    }
+    .nav-elem li{
+        font-size: 4vw;
+        margin-top: 3rem;
+    }
+    .nav-elem h5{
+        font-size: 3.6vw;
+    }
+     /* HERO CONTAINER */
+
+     .heroContainer{
+        padding: 2vw;
+        text-align: center;
+    }
+
+    .heroContainer h1 {
+        font-size: 7.5vw;
+    }
+
+    .heroContainer h3{
+        font-size: 3vw;
+        padding: 2vw;
+        border-radius: 4vw;
+    }
+
+    .heroContainer h3::before{
+        top: 28%;
+        width: .7rem;
+        height: .7rem;
+    }
+    
+    /* MOVING CONTAINER */
+
+    .marqueInfo h1{
+        font-size: 8vw;
+    }
+
+    .marqueInfo p{
+        font-size: 5vw;
+    }
+    .infiniteFlow .card1 img{
+        width: 4rem ;
+        height: 4rem;
+    }
+    .infiniteFlow h2{
+        font-size: 2.2rem;
+    }
+
+    /* DESCRIPTION */
+
+    .descTop{
+        width: 90%;
+    }
+
+    .descTop h1{
+        width: 100%;
+        font-size: 1.7rem;
+    }
+    .descBottom{
+        flex-direction: column;
+    }
+
+    .descBottom .card{
+        width: 70%;
+        height: 30%;
+    }
+    .card h2{
+        font-size: 1.4rem;
+    }
+    .card p{
+        font-size: .85rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+        height: 60%;
+        justify-content: space-between;
+    }
+    .partContainer{
+        width: 60%;
+        flex-direction: column;
+    }
+    .partContainer .part{
+        width: 100%;
+    }
+
+    .partContainer .part h3{
+        font-size: 1.2rem;
+    }
+    .part a{
+        width: 38%;
+    }
+}
+
+@media screen and (max-width:400px) and (min-width:320px) and (min-height:791px) {
+
+    .logo h1{
+        font-size: 4.5vw;
+        margin: 1.1rem 0rem 0rem 0rem;
+    }
+
+    .menuBtn{
+        margin: .6rem 0rem 0rem 0rem;
+    }
+
+    .navbar{
+        padding: 2vw 4vw;
+    }
+    .nav-elem li{
+        font-size: 4vw;
+        margin-top: 3rem;
+    }
+    .nav-elem h5{
+        font-size: 3.6vw;
+    }
+
+     /* HERO CONTAINER */
+
+     .heroContainer{
+        padding: 2vw;
+        text-align: center;
+    }
+
+    .heroContainer h1 {
+        font-size: 5.5vw;
+    }
+
+    .heroContainer h3{
+        font-size: 3.5vw;
+        padding: 2vw;
+        border-radius: 4vw;
+    }
+
+    .heroContainer h3::before{
+        top: 28%;
+        width: .7rem;
+        height: .7rem;
+    }
+    
+    /* MOVING CONTAINER */
+
+    .marqueInfo h1{
+        font-size: 8vw;
+    }
+
+    .marqueInfo p{
+        font-size: 5vw;
+    }
+    .infiniteFlow .card1 img{
+        width: 4rem ;
+        height: 4rem;
+    }
+    .infiniteFlow h2{
+        font-size: 2.2rem;
+    }
+
+    /* DESCRIPTION */
+
+    .descTop{
+        width: 90%;
+    }
+
+    .descTop h1{
+        width: 100%;
+        font-size: 1.7rem;
+    }
+    .descBottom{
+        flex-direction: column;
+    }
+
+    .descBottom .card{
+        width: 70%;
+        height: 30%;
+    }
+    .card h2{
+        font-size: 1.4rem;
+    }
+    .card p{
+        font-size: .85rem;
+    }
+
+    /* FOOTER */
+
+    footer{
+        height: 60%;
+        justify-content: space-between;
+    }
+    .partContainer{
+        width: 60%;
+        flex-direction: column;
+    }
+    .partContainer .part{
+        width: 100%;
+    }
+
+    .partContainer .part h3{
+        font-size: 1.2rem;
+    }
+    .part a{
+        width: 38%;
+    }
+}
+
+/* ******** ALL MOBILE DEVICES ******* */
+
+
+
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN */
