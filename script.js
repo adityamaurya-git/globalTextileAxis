@@ -20,104 +20,84 @@ window.addEventListener("mousemove", (e) => {
     })
 })
 
-document.querySelector(".menuBtn").addEventListener("mouseenter", () => {
-    cursor.style.display = "none"
-})
-document.querySelector(".menuBtn").addEventListener("mouseleave", () => {
-    cursor.style.display = "block"
-})
 
-document.querySelector("footer").addEventListener("mouseenter",()=>{
+document.querySelector("footer").addEventListener("mouseenter", () => {
     cursor.style.backgroundColor = "white"
 })
-document.querySelector("footer").addEventListener("mouseleave",()=>{
+document.querySelector("footer").addEventListener("mouseleave", () => {
     cursor.style.backgroundColor = "#014c2d"
 })
 
 // MOVING CURSOR ENDS
 
+let mm = gsap.matchMedia()
 
+mm.add("screen and (min-width: 769px)", () => {
+    const navbar = document.querySelector(".navbar");
 
-// ASIDE BAR SECTION STARTS
-
-// ASIDE BAR STARTS
-
-const menuBtn = document.querySelector(".menuBtn i");
-const close = document.querySelector(".close");
-
-function asideBar() {
-
-    var tl = gsap.timeline()
-
-    tl.to("aside", {
-        right: 0,
-        duration: .5,
-        ease: Power4.out,
-    })
-    tl.from(".h1Text h1", {
-        x: 70,
-        stagger: .2,
-        duration: .5,
-        opacity: 0,
-    })
-    tl.from(".close", {
-        opacity: 0,
-    })
-
-    tl.pause()
-    menuBtn.addEventListener("click", () => {
-        tl.play()
-    })
-
-    close.addEventListener("click", () => {
-        tl.reverse()
-    })
-
-
-}
-
-asideBar()
-
-function h1text() {
-
-
-    const h1Text = document.querySelectorAll(".h1Text")
-
-    h1Text.forEach((dets) => {
-
-        dets.addEventListener("mouseenter", (elem) => {
-            console.log(elem)
-            gsap.to(dets.children[0], {
-                x: 70,
-            })
-
-        })
-        dets.addEventListener("mouseleave", (elem) => {
-            gsap.to(dets.children[0], {
-                x: 0,
-            })
+    navbar.addEventListener("mouseenter", function () {
+        let tl = gsap.timeline()
+        tl.to(".nav-bottom", {
+            height: "22vh",
+        }, "a")
+        tl.to(".nav-elem h5", {
+            display: "block",
+        }, "a")
+        tl.to(".nav-elem h5 span", {
+            y: 0,
+            stagger: {
+                amount: 0.5
+            }
         })
     })
+    navbar.addEventListener("mouseleave", function () {
+        let tl = gsap.timeline()
+        tl.to(".nav-elem h5 span", {
+            y: 25,
+            stagger: {
+                amount: 0.1
+            }
+        }, "b")
+        tl.to(".nav-bottom", {
+            height: "0vh",
+            duration: .6
+        }, "b")
+        tl.to(".nav-elem h5", {
+            display: "none",
+            duration: .6
+        }, "b")
+    })
 
-}
 
-h1text()
+})
 
+const navbar1 = document.querySelector(".navbar")
+document.querySelector(".menuBtn").addEventListener("click", () => {
+    if (navbar1.classList.contains("navbar-height")) {
+        navbar1.classList.remove("navbar-height")
+    }
+    else{
+       navbar1.classList.add("navbar-height")
+    }
+    gsap.to(".navbar",{
+        duration:1,
+    })
+})
 
 // ASIDE BAR ENDS
 
 // ASIDE BAR SECTION ENDS
 
 
-gsap.from(".descBottom .card",{
-    opacity:0,
+gsap.from(".descBottom .card", {
+    opacity: 0,
     y: 100,
-    stagger:.25,
-    scrollTrigger:{
-        trigger:".descBottom",
-        scroller:"body",
+    stagger: .25,
+    scrollTrigger: {
+        trigger: ".descBottom",
+        scroller: "body",
         // markers:true,
-        start:"top 70%",
+        start: "top 70%",
     }
 })
 
